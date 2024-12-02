@@ -13,6 +13,7 @@ def jump_okay(a: int, b: int, asc: bool):
 
 def is_safe(report: list[int], dampen: bool = True):
     if len(report) < 2:
+        # Single element or empty report are not technically unsafe
         return True
     asc = report[0] < report[1]
     for i in range(len(reports)):
@@ -20,13 +21,15 @@ def is_safe(report: list[int], dampen: bool = True):
             break
         if not jump_okay(report[i], report[i+1], asc):
             if not dampen:
+                # Allow function to selectively recurse - in this case only one level is allowed
                 return False
             for j in range(len(report)):
+                # Remove one element at a time and test again
                 dampened_report = report[:j] + report[j+1:]
                 if is_safe(dampened_report, dampen=False):
                     return True
-            return False
+            return False # TODO: Investigate possible early return - what criteria indicates that this report can't be dampened?
     return True
 
-print(f"Part 1: {len(list(filter(lambda report: is_safe(report, dampen=False), reports)))}")
+print(f"Part 1: {len(list(filter(lambda report: is_safe(report, dampen=False), reports)))}") # dampen=False to disable Part 2 logic
 print(f"Part 2: {len(list(filter(lambda report: is_safe(report), reports)))}")
