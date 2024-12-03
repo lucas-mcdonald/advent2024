@@ -1,2 +1,2 @@
 # advent2024
-Code quality may vary. Will he finish more days than last year?
+Learning Go this year... Code quality may vary. Will he finish more days than last year? Will he actually stick with Go?
