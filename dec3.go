@@ -26,7 +26,7 @@ func get_operands_from_mul(mul string) (a, b string) {
 	return ints[0], ints[1]
 }
 
-func main() {
+func dec3() {
 	file := "inputs/dec3.txt"
 	// Get all matches for mul\(\d\,\d\) in file
 	// and print them
