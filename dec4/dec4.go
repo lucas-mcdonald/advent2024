@@ -129,7 +129,7 @@ func dec4(fileName string) (int, int) {
 }
 
 func main() {
-	p1Total, p2Total := dec4("inputs/dec4.txt")
+	p1Total, p2Total := dec4("../inputs/dec4.txt")
 	fmt.Println("Part1: ", p1Total)
 	fmt.Println("Part2: ", p2Total)
 }
