@@ -27,7 +27,7 @@ func get_operands_from_mul(mul string) (a, b string) {
 }
 
 func main() {
-	file := "inputs/dec3.txt"
+	file := "../inputs/dec3.txt"
 	// Get all matches for mul\(\d\,\d\) in file
 	// and print them
 	input, err := os.ReadFile(file)
